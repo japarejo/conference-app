@@ -6,11 +6,11 @@ import org.springframework.social.connect.UserProfile;
 
 import de.codecentric.dao.UsersDao;
 
-public class AccountConnectionSignupService implements ConnectionSignUp {
+public class AccountConnectionSignUpService implements ConnectionSignUp {
 
     private final UsersDao usersDao;
 
-    public AccountConnectionSignupService(UsersDao usersDao) {
+    public AccountConnectionSignUpService(UsersDao usersDao) {
         this.usersDao = usersDao;
     }
 

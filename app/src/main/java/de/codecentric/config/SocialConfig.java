@@ -17,7 +17,7 @@ import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository;
 import org.springframework.social.security.AuthenticationNameUserIdSource;
 import org.springframework.social.twitter.connect.TwitterConnectionFactory;
 
-import de.codecentric.auth.AccountConnectionSignupService;
+import de.codecentric.auth.AccountConnectionSignUpService;
 import de.codecentric.dao.UsersDao;
 
 @Configuration
@@ -48,7 +48,7 @@ public class SocialConfig implements SocialConfigurer {
     @Override
     public UsersConnectionRepository getUsersConnectionRepository(ConnectionFactoryLocator connectionFactoryLocator) {
         JdbcUsersConnectionRepository repository = new JdbcUsersConnectionRepository(dataSource,connectionFactoryLocator, Encryptors.noOpText());
-        repository.setConnectionSignUp(new AccountConnectionSignupService(usersDao));
+        repository.setConnectionSignUp(new AccountConnectionSignUpService(usersDao));
         return repository;
     }
 }
